@@ -45,6 +45,7 @@
       }
       input{
         height: 30px;
+        border: solid 1px #ccc;
       }
     </style>
   </head>
@@ -76,6 +77,17 @@
       </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
 
+    <script src="/socket.io/socket.io.js">
+    </script>
+
+    <script>
+    $(function(){
+      var socket = io();
+    });
+
+    </script>
   </body>
 </html>
