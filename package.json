@@ -12,10 +12,6 @@
   },
   "author": "Anandatama",
   "license": "ISC",
-  "dependecies": {
-    "socket.io": "*",
-    "express": "*"
-  },
   "bugs": {
     "url": "https://github.com/anandatama/chatio/issues"
   },
