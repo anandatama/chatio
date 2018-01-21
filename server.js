@@ -1,20 +1,24 @@
 var express = require('express');
-  app = express();
-  server = require('http').createServer(app);
-  io = require('socket.io').listen(server);
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
 
 server.listen(process.env.PORT || 5000 );
-console.log("Server running...");
+console.log("Listening on 5000");
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-io.sockets.on('connection', function(socket){
-  console.log('Socket connected..');
+io.on('connection', function(socket){
+  console.log("Socket connected..");
+
+  socket.on('disconnect', function(){
+      console.log("Client disconnect");
+  });
 
   //Send message
-  sockets.on('send message', function(data){
-    io.socket.emit('new message', {msg: +  data});
+  socket.on('send message', function(data){
+    io.emit('new message', {msg:  data});
   });
 });
